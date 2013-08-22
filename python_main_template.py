@@ -103,6 +103,11 @@ def main(argv):
         logger.info(len(s2))
         logger.info(s2.strip())  #remove leading and trailing white space
         logger.info(s2.split())
+        if s2.find('test') != -1:
+            logger.info('find test')
+        else:
+            logger.info('not find test') 
+        logger.info('test' in s2)
 
         #list
         logger.info("-------------list-------------")   
@@ -118,6 +123,8 @@ def main(argv):
         logger.info(len(sample_list))
         for i in range(3):
             logger.info(i)
+        logger.info(3 in sample_list)
+        logger.info(9 in sample_list)
 
         #tuple
         logger.info("-------------tuple-------------")   
@@ -135,6 +142,8 @@ def main(argv):
         logger.info(len(sample_dict))
         for (k,v) in sample_dict.items():
             logger.info("k :%s, v:%s" % (k,v))
+        logger.info('a' in sample_dict.keys())
+        logger.info(5555 in sample_dict.values())
 
         #file access
         logger.info("-------------file-------------")   
