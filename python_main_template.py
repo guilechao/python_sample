@@ -140,6 +140,8 @@ def main(argv):
         sample_dict['d'] = 444
         logger.info(sample_dict)
         logger.info(len(sample_dict))
+        logger.info(sample_dict['a'])
+        logger.info(sample_dict.get('aa', 'fail to find'))
         for (k,v) in sample_dict.items():
             logger.info("k :%s, v:%s" % (k,v))
         logger.info('a' in sample_dict.keys())
