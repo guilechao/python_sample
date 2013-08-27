@@ -91,6 +91,20 @@ def main(argv):
                                              
         logger.debug("-------------Start Processing-------------")      
         
+        #bool
+        logger.info("-------------bool-------------")
+        a = True
+        b = False
+        if a:   #or if a == True:
+            logger.info('a is True')
+        else:
+            logger.info('a is False')             
+
+        if not b:  #or if b == False:
+            logger.info('b is False')
+        else:
+            logger.info('a is True')      
+
         #string
         logger.info("-------------string-------------")     
         s1 = 'aaa'
