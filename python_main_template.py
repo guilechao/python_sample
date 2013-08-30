@@ -6,6 +6,7 @@ import os
 import subprocess
 import logging
 import traceback
+import ConfigParser
 
 logger = logging.getLogger("")
 logger.setLevel(logging.DEBUG)   
@@ -170,6 +171,19 @@ def main(argv):
         fr = open('test.txt', 'r')
         logger.info(fr.read())
         fr.close()
+
+        #read config
+        logger.info("-------------config-------------")   
+        setting_config = ConfigParser.RawConfigParser()
+        setting_config.read('setting.cfg')
+        try:
+            v1 = setting_config.get("SECTION_A", "k1")
+            v2 = setting_config.get("SECTION_A", "k2")
+
+            logger.info("v1:%s, v2:%s" % (v1,v2))
+
+        except:
+            logger.error('fail to read from config')
 
         #use command line get output and process
         logger.info("-------------command line process-------------")   
